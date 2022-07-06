@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="@dimen/_220sdp"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white"
+    android:elevation="@dimen/_7sdp"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/image_profile"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_200sdp"
+            android:contentDescription="@string/error"
+            android:scaleType="centerCrop"
+            android:src="@drawable/icon_male_ph" />
+
+        <TextView
+            android:id="@+id/tv_username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:background="#33000000"
+            android:padding="@dimen/_10sdp"
+            android:text="@string/username"
+            android:textColor="@android:color/white" />
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/_7sdp">
+
+        <ImageView
+            android:id="@+id/btn_chat"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:padding="@dimen/_7sdp"
+            android:src="@drawable/ic_chat"
+            app:tint="@color/colorPrimary" />
+
+
+        <ImageView
+            android:id="@+id/btn_call"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/error"
+            android:padding="@dimen/_7sdp"
+            android:src="@drawable/ic_call"
+            app:tint="@color/colorPrimary" />
+
+
+        <ImageView
+            android:id="@+id/btn_video"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/error"
+            android:padding="@dimen/_7sdp"
+            android:src="@drawable/ic_videocall"
+            app:tint="@color/colorPrimary" />
+
+
+        <ImageView
+            android:id="@+id/btn_info"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:padding="@dimen/_7sdp"
+            android:src="@drawable/ic_info"
+            app:tint="@color/colorPrimary" />
+    </LinearLayout>
+</LinearLayout>

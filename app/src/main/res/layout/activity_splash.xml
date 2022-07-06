@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="splash"
+            type="com.mr_w.resourceplus.activities.splash_activity.SplashViewModel" />
+    </data>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:context=".activities.splash_activity.SplashActivity">
+
+        <ImageView
+            android:id="@+id/app_logo"
+            android:layout_width="@dimen/_130sdp"
+            android:layout_height="@dimen/_130sdp"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="@dimen/_22sdp"
+            android:contentDescription="@string/splash"
+            android:src="@drawable/app_logo" />
+
+    </RelativeLayout>
+
+</layout>

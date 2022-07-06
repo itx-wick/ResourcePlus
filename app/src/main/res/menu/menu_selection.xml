@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_delete"
+        android:icon="@drawable/ic_delete"
+        android:title="Delete"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_mute"
+        android:icon="@drawable/ic_speaker_off"
+        android:title="Mute"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_archive"
+        android:icon="@drawable/ic_archive"
+        android:title="Archive"
+        app:showAsAction="always" />
+
+    <group android:id="@+id/others">
+        <item
+            android:id="@+id/view_contact"
+            android:title="View contact" />
+
+        <item
+            android:id="@+id/mark_as_unread"
+            android:title="Mark as unread" />
+
+        <item
+            android:id="@+id/select_all"
+            android:title="Select all" />
+
+        <item
+            android:id="@+id/unselect_all"
+            android:title="Unselect all"
+            android:visible="false" />
+    </group>
+</menu>

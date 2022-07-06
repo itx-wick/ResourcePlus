@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/startFragment">
+
+    <fragment
+        android:id="@+id/phoneLoginFragment"
+        android:name="com.mr_w.resourceplus.fragments.phone_login.LoginFragment"
+        android:label="fragment_phone_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_phoneLoginFragment_to_verifyCodeFragment"
+            app:destination="@id/verifyCodeFragment" />
+        <action
+            android:id="@+id/action_phoneLoginFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/verifyCodeFragment"
+        android:name="com.mr_w.resourceplus.fragments.otp_fragment.OtpFragment"
+        android:label="fragment_verify_code"
+        tools:layout="@layout/fragment_otp" >
+        <action
+            android:id="@+id/action_verifyCodeFragment_to_userInfoFragment"
+            app:destination="@id/userInfoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.mr_w.resourceplus.fragments.main_fragment.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_conversationDetailFragment"
+            app:destination="@id/conversationDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/startFragment"
+        android:name="com.mr_w.resourceplus.fragments.start_fragment.StartFragment"
+        android:label="StartFragment" >
+        <action
+            android:id="@+id/action_startFragment_to_phoneLoginFragment"
+            app:destination="@id/phoneLoginFragment" />
+        <action
+            android:id="@+id/action_startFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/userInfoFragment"
+        android:name="com.mr_w.resourceplus.fragments.register_fragment.RegistrationFragment"
+        android:label="UserInfoFragment" >
+        <action
+            android:id="@+id/action_userInfoFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/conversationDetailFragment"
+        android:name="com.mr_w.resourceplus.fragments.conversation_detail.ConversationDetailFragment"
+        android:label="ConversationDetailFragment" >
+        <action
+            android:id="@+id/action_conversationDetailFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+</navigation>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="links_tab"
+            type="com.mr_w.resourceplus.fragments.links_tab.LinksTabViewModel" />
+    </data>
+
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:context=".fragments.links_tab.LinksTab">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/links"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none" />
+
+        <TextView
+            android:id="@+id/noLink"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="No Link"
+            android:textSize="@dimen/_16ssp"
+            android:visibility="gone" />
+
+    </FrameLayout>
+
+</layout>

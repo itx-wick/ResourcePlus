@@ -1,0 +1,991 @@
+<!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    xmlns:card_view="http://schemas.android.com/tools"-->
+<!--    android:id="@+id/msgLayout"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    android:orientation="horizontal"-->
+<!--    android:layout_margin="3dp">-->
+<!--    <CheckBox-->
+<!--        android:id="@+id/check_selected"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:visibility="gone"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_gravity="center"/>-->
+<!--    <LinearLayout-->
+<!--        android:id="@+id/layout_text"-->
+<!--        android:visibility="visible"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:background="@color/white"-->
+<!--        android:paddingRight="@dimen/_15sdp"-->
+<!--        android:orientation="horizontal">-->
+<!--        <TextView-->
+<!--            android:id="@+id/tv_text_message"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:maxWidth="@dimen/_200sdp"-->
+<!--            android:padding="@dimen/_10sdp"-->
+<!--            android:textSize="14sp"-->
+<!--            android:minWidth="@dimen/_60sdp"-->
+<!--            android:textColor="@android:color/black"-->
+<!--            android:text="This is a text message"/>-->
+
+<!--        <FrameLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content">-->
+
+
+<!--            <androidx.cardview.widget.CardView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_marginBottom="5dp"-->
+<!--                android:layout_marginLeft="26dp"-->
+<!--                android:layout_marginRight="6dp"-->
+<!--                card_view:cardCornerRadius="4dp"-->
+<!--                card_view:cardElevation="0dp">-->
+
+<!--                &lt;!&ndash;audio layout start&ndash;&gt;-->
+
+<!--                <LinearLayout-->
+<!--                    android:id="@+id/audio_layout"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginBottom="18dp"-->
+<!--                    android:layout_marginTop="3dp"-->
+<!--                    android:orientation="horizontal"-->
+<!--                    android:visibility="gone">-->
+
+
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="180dp"-->
+<!--                        android:layout_height="match_parent"-->
+<!--                        android:orientation="horizontal">-->
+
+<!--                        <FrameLayout-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_gravity="center"-->
+<!--                            android:layout_marginLeft="6dp"-->
+<!--                            android:layout_marginRight="6dp">-->
+
+
+<!--                            <ProgressBar-->
+<!--                                android:id="@+id/progress_bar_upload_audio_init"-->
+<!--                                android:layout_width="30dp"-->
+<!--                                android:layout_height="30dp"-->
+<!--                                android:layout_gravity="center"-->
+<!--                                android:visibility="gone" />-->
+
+<!--                            <ProgressBar-->
+<!--                                android:id="@+id/progress_bar_upload_audio"-->
+<!--                                style="?android:attr/progressBarStyleHorizontal"-->
+<!--                                android:layout_width="30dp"-->
+<!--                                android:layout_height="30dp"-->
+<!--                                android:layout_gravity="center"-->
+<!--                                android:max="100"-->
+<!--                                android:progress="0"-->
+<!--                                android:progressDrawable="@drawable/bg_circle_audio_progress"-->
+<!--                                android:visibility="gone" />-->
+
+
+<!--                            <ImageButton-->
+<!--                                android:id="@+id/cancel_upload_audio"-->
+<!--                                android:layout_width="16dp"-->
+<!--                                android:layout_height="16dp"-->
+<!--                                android:layout_gravity="center"-->
+<!--                                android:background="@color/transparent"-->
+<!--                                android:gravity="center"-->
+<!--                                android:visibility="gone"-->
+<!--                                android:src="@drawable/ic_close_gary_24dp" />-->
+
+<!--                            <LinearLayout-->
+<!--                                android:id="@+id/retry_upload_audio"-->
+<!--                                android:layout_width="30dp"-->
+<!--                                android:layout_height="30dp"-->
+<!--                                android:layout_gravity="bottom|right"-->
+<!--                                android:background="@drawable/bg_circle_audio_progress_bar"-->
+<!--                                android:padding="2dp"-->
+<!--                                android:visibility="gone">-->
+
+<!--                                <ImageButton-->
+<!--                                    android:id="@+id/retry_upload_audio_button"-->
+<!--                                    android:layout_width="match_parent"-->
+<!--                                    android:layout_height="match_parent"-->
+<!--                                    android:background="@color/transparent"-->
+<!--                                    android:padding="3dp"-->
+<!--                                    android:src="@drawable/ic_file_upload_gray_24dp" />-->
+<!--                            </LinearLayout>-->
+
+<!--                            <ProgressBar-->
+<!--                                android:id="@+id/progress_bar_download_audio_init"-->
+<!--                                android:layout_width="30dp"-->
+<!--                                android:layout_height="30dp"-->
+<!--                                android:layout_gravity="center"-->
+<!--                                android:visibility="gone" />-->
+
+<!--                            <ProgressBar-->
+<!--                                android:id="@+id/progress_bar_download_audio"-->
+<!--                                style="?android:attr/progressBarStyleHorizontal"-->
+<!--                                android:layout_width="30dp"-->
+<!--                                android:layout_height="30dp"-->
+<!--                                android:layout_gravity="center"-->
+<!--                                android:max="100"-->
+<!--                                android:padding="5dp"-->
+<!--                                android:progress="0"-->
+<!--                                android:progressDrawable="@drawable/bg_circle_audio_progress"-->
+<!--                                android:visibility="gone" />-->
+
+
+<!--                            <ImageButton-->
+<!--                                android:id="@+id/cancel_download_audio"-->
+<!--                                android:layout_width="16dp"-->
+<!--                                android:layout_height="16dp"-->
+<!--                                android:layout_gravity="center"-->
+<!--                                android:background="@color/transparent"-->
+<!--                                android:gravity="center"-->
+<!--                                android:visibility="gone"-->
+<!--                                android:src="@drawable/ic_close_gary_24dp" />-->
+
+<!--                            <LinearLayout-->
+<!--                                android:id="@+id/retry_download_audio"-->
+<!--                                android:layout_width="30dp"-->
+<!--                                android:layout_height="30dp"-->
+<!--                                android:layout_gravity="bottom|right"-->
+<!--                                android:background="@drawable/bg_circle_white_audio_progress_bar"-->
+<!--                                android:padding="2dp"-->
+<!--                                android:visibility="gone">-->
+
+<!--                                <ImageButton-->
+<!--                                    android:id="@+id/retry_download_audio_button"-->
+<!--                                    android:layout_width="match_parent"-->
+<!--                                    android:layout_height="match_parent"-->
+<!--                                    android:background="@color/transparent"-->
+<!--                                    android:padding="3dp"-->
+<!--                                    android:src="@drawable/ic_file_download_gary_24dp" />-->
+<!--                            </LinearLayout>-->
+
+<!--                            <FrameLayout-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content">-->
+
+
+<!--                                <ImageButton-->
+<!--                                    android:id="@+id/pause_btn_audio"-->
+<!--                                    android:layout_width="wrap_content"-->
+<!--                                    android:layout_height="wrap_content"-->
+<!--                                    android:layout_gravity="center"-->
+<!--                                    android:background="@color/transparent"-->
+<!--                                    android:gravity="center"-->
+<!--                                    android:padding="16dp"-->
+<!--                                    android:visibility="gone"-->
+<!--                                    android:src="@drawable/ic_pause_gray_24dp" />-->
+
+<!--                                <ImageButton-->
+<!--                                    android:id="@+id/play_btn_audio"-->
+<!--                                    android:layout_width="wrap_content"-->
+<!--                                    android:layout_height="wrap_content"-->
+<!--                                    android:layout_gravity="center"-->
+<!--                                    android:background="@color/transparent"-->
+<!--                                    android:gravity="center"-->
+<!--                                    android:padding="16dp"-->
+<!--                                    android:visibility="gone"-->
+<!--                                    android:src="@drawable/ic_play_arrow_gray_24dp" />-->
+<!--                            </FrameLayout>-->
+
+<!--                        </FrameLayout>-->
+
+
+<!--                        <LinearLayout-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_gravity="bottom"-->
+<!--                            android:orientation="vertical">-->
+
+<!--                            <SeekBar-->
+<!--                                android:id="@+id/audio_progress_bar"-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:layout_marginBottom="-5dp"-->
+<!--                                android:layout_marginLeft="-10dp"-->
+<!--                                android:layout_marginRight="-10dp" />-->
+
+<!--                            &lt;!&ndash; Timer Display &ndash;&gt;-->
+<!--                            <FrameLayout-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="wrap_content">-->
+<!--                                &lt;!&ndash; Current Duration Label &ndash;&gt;-->
+<!--                                <TextView-->
+<!--                                    android:id="@+id/audio_current_duration"-->
+<!--                                    android:layout_width="match_parent"-->
+<!--                                    android:layout_height="wrap_content"-->
+<!--                                    android:gravity="left"-->
+<!--                                    android:textColor="@color/colorGrayDark"-->
+<!--                                    android:textSize="12sp"-->
+<!--                                    android:visibility="gone" />-->
+<!--                                &lt;!&ndash; Total Duration Label &ndash;&gt;-->
+<!--                                <TextView-->
+<!--                                    android:id="@+id/audio_total_duration"-->
+<!--                                    android:layout_width="match_parent"-->
+<!--                                    android:layout_height="wrap_content"-->
+<!--                                    android:layout_marginRight="6dp"-->
+<!--                                    android:gravity="left"-->
+<!--                                    android:textColor="@color/colorGrayDark"-->
+<!--                                    android:textSize="12sp"-->
+<!--                                    android:visibility="visible" />-->
+<!--                            </FrameLayout>-->
+<!--                        </LinearLayout>-->
+
+
+<!--                    </LinearLayout>-->
+
+<!--                    <FrameLayout-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content">-->
+
+
+<!--                        <ImageView-->
+<!--                            android:id="@+id/audio_user_image"-->
+<!--                            android:layout_width="40dp"-->
+<!--                            android:layout_height="40dp"-->
+<!--                            android:layout_gravity="center"-->
+<!--                            android:background="@drawable/bg_circle_image_holder" />-->
+
+<!--                        <LinearLayout-->
+<!--                            android:layout_width="20dp"-->
+<!--                            android:layout_height="20dp"-->
+<!--                            android:layout_gravity="bottom|left"-->
+<!--                            android:background="@drawable/bg_mic_white"-->
+<!--                            android:padding="2dp"-->
+<!--                            android:visibility="visible">-->
+
+<!--                            <FrameLayout-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content">-->
+
+<!--                                <ImageButton-->
+<!--                                    android:layout_width="match_parent"-->
+<!--                                    android:layout_height="match_parent"-->
+<!--                                    android:background="@color/transparent"-->
+<!--                                    android:src="@drawable/ic_audio_blue_24dp" />-->
+
+<!--                                <ImageButton-->
+<!--                                    android:layout_width="match_parent"-->
+<!--                                    android:layout_height="match_parent"-->
+<!--                                    android:layout_marginBottom="4dp"-->
+<!--                                    android:padding="2dp"-->
+<!--                                    android:src="@drawable/ic_mic_blue_24dp" />-->
+<!--                            </FrameLayout>-->
+<!--                        </LinearLayout>-->
+<!--                    </FrameLayout>-->
+
+<!--                </LinearLayout>-->
+<!--                &lt;!&ndash;audio layout end&ndash;&gt;-->
+
+<!--                &lt;!&ndash; document layout start &ndash;&gt;-->
+
+<!--                <LinearLayout-->
+<!--                    android:id="@+id/document_layout"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:gravity="center"-->
+<!--                    android:paddingBottom="16dp"-->
+<!--                    android:paddingTop="16dp"-->
+<!--                    android:visibility="gone">-->
+
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:orientation="vertical">-->
+
+<!--                        <FrameLayout-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_gravity="center"-->
+<!--                            android:layout_marginLeft="6dp"-->
+<!--                            android:layout_marginRight="6dp">-->
+
+
+<!--                            <ProgressBar-->
+<!--                                android:id="@+id/progress_bar_upload_document_init"-->
+<!--                                android:layout_width="30dp"-->
+<!--                                android:layout_height="30dp"-->
+<!--                                android:layout_gravity="center"-->
+<!--                                android:visibility="gone" />-->
+
+<!--                            <ProgressBar-->
+<!--                                android:id="@+id/progress_bar_upload_document"-->
+<!--                                style="?android:attr/progressBarStyleHorizontal"-->
+<!--                                android:layout_width="30dp"-->
+<!--                                android:layout_height="30dp"-->
+<!--                                android:layout_gravity="center"-->
+<!--                                android:max="100"-->
+<!--                                android:padding="3dp"-->
+<!--                                android:progress="0"-->
+<!--                                android:progressDrawable="@drawable/bg_circle_audio_progress"-->
+<!--                                android:visibility="gone" />-->
+
+
+<!--                            <ImageButton-->
+<!--                                android:id="@+id/cancel_upload_document"-->
+<!--                                android:layout_width="16dp"-->
+<!--                                android:layout_height="16dp"-->
+<!--                                android:layout_gravity="center"-->
+<!--                                android:background="@color/transparent"-->
+<!--                                android:gravity="center"-->
+<!--                                android:visibility="gone"-->
+<!--                                android:src="@drawable/ic_close_gary_24dp" />-->
+
+<!--                            <LinearLayout-->
+<!--                                android:id="@+id/retry_upload_document"-->
+<!--                                android:layout_width="30dp"-->
+<!--                                android:layout_height="30dp"-->
+<!--                                android:layout_gravity="bottom|right"-->
+<!--                                android:background="@drawable/bg_circle_audio_progress_bar"-->
+<!--                                android:padding="2dp"-->
+<!--                                android:visibility="gone">-->
+
+<!--                                <ImageButton-->
+<!--                                    android:layout_width="match_parent"-->
+<!--                                    android:layout_height="match_parent"-->
+<!--                                    android:background="@color/transparent"-->
+<!--                                    android:padding="3dp"-->
+<!--                                    android:src="@drawable/ic_file_upload_gray_24dp" />-->
+<!--                            </LinearLayout>-->
+
+<!--                            <ProgressBar-->
+<!--                                android:id="@+id/progress_bar_download_document_init"-->
+<!--                                android:layout_width="30dp"-->
+<!--                                android:layout_height="30dp"-->
+<!--                                android:layout_gravity="center"-->
+<!--                                android:visibility="gone" />-->
+
+<!--                            <ProgressBar-->
+<!--                                android:id="@+id/progress_bar_download_document"-->
+<!--                                style="?android:attr/progressBarStyleHorizontal"-->
+<!--                                android:layout_width="30dp"-->
+<!--                                android:layout_height="30dp"-->
+<!--                                android:layout_gravity="center"-->
+<!--                                android:max="100"-->
+<!--                                android:padding="5dp"-->
+<!--                                android:progress="0"-->
+<!--                                android:progressDrawable="@drawable/bg_circle_audio_progress"-->
+<!--                                android:visibility="gone" />-->
+
+
+<!--                            <ImageButton-->
+<!--                                android:id="@+id/cancel_download_document"-->
+<!--                                android:layout_width="16dp"-->
+<!--                                android:layout_height="16dp"-->
+<!--                                android:layout_gravity="center"-->
+<!--                                android:background="@color/transparent"-->
+<!--                                android:gravity="center"-->
+<!--                                android:visibility="gone"-->
+<!--                                android:src="@drawable/ic_close_gary_24dp" />-->
+
+<!--                            <LinearLayout-->
+<!--                                android:id="@+id/retry_download_document"-->
+<!--                                android:layout_width="30dp"-->
+<!--                                android:layout_height="30dp"-->
+<!--                                android:layout_gravity="bottom|right"-->
+<!--                                android:background="@drawable/bg_circle_white_audio_progress_bar"-->
+<!--                                android:padding="2dp"-->
+<!--                                android:visibility="gone">-->
+
+<!--                                <ImageButton-->
+<!--                                    android:layout_width="match_parent"-->
+<!--                                    android:layout_height="match_parent"-->
+<!--                                    android:background="@color/transparent"-->
+<!--                                    android:padding="3dp"-->
+<!--                                    android:src="@drawable/ic_file_download_gary_24dp" />-->
+<!--                            </LinearLayout>-->
+
+
+<!--                            <ImageButton-->
+<!--                                android:id="@+id/document_image"-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:layout_gravity="center"-->
+<!--                                android:background="@color/transparent"-->
+<!--                                android:visibility="gone"-->
+<!--                                android:src="@drawable/ic_document_file_blue_24dp" />-->
+<!--                        </FrameLayout>-->
+
+
+<!--                        <TextView-->
+<!--                            android:id="@+id/document_size"-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:textColor="@color/colorGray2"-->
+<!--                            android:visibility="gone" />-->
+<!--                    </LinearLayout>-->
+
+<!--                    <TextView-->
+<!--                        android:id="@+id/document_title"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_gravity="top"-->
+<!--                        android:padding="2dp"-->
+<!--                        android:textColor="@color/colorBlueLight" />-->
+<!--                </LinearLayout>-->
+<!--                &lt;!&ndash;document layout end&ndash;&gt;-->
+
+<!--                &lt;!&ndash;video layout start&ndash;&gt;-->
+<!--                <FrameLayout-->
+<!--                    android:id="@+id/video_layout"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:clickable="true"-->
+<!--                    android:visibility="gone">-->
+
+
+<!--                    <ImageView-->
+<!--                        android:id="@+id/video_thumbnail"-->
+<!--                        android:layout_width="200dp"-->
+<!--                        android:layout_height="200dp"-->
+<!--                        android:layout_gravity="center"-->
+<!--                        android:adjustViewBounds="true"-->
+<!--                        android:scaleType="centerCrop"-->
+<!--                        android:visibility="gone" />-->
+
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="match_parent"-->
+<!--                        android:layout_gravity="left"-->
+<!--                        android:orientation="vertical">-->
+
+
+<!--                        <ImageButton-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:background="@color/transparent"-->
+<!--                            android:src="@drawable/ic_video_wihte_light_24dp" />-->
+
+<!--                        <ImageButton-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:background="@color/transparent"-->
+<!--                            android:src="@drawable/ic_video_wihte_light_24dp" />-->
+
+<!--                        <ImageButton-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:background="@color/transparent"-->
+<!--                            android:src="@drawable/ic_video_wihte_light_24dp" />-->
+
+<!--                        <ImageButton-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:background="@color/transparent"-->
+<!--                            android:src="@drawable/ic_video_wihte_light_24dp" />-->
+
+<!--                        <ImageButton-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:src="@drawable/ic_video_wihte_light_24dp" />-->
+
+<!--                        <ImageButton-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:background="@color/transparent"-->
+<!--                            android:src="@drawable/ic_video_wihte_light_24dp" />-->
+
+<!--                        <ImageButton-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:background="@color/transparent"-->
+<!--                            android:src="@drawable/ic_video_wihte_light_24dp" />-->
+
+<!--                    </LinearLayout>-->
+
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="match_parent"-->
+<!--                        android:layout_gravity="right"-->
+<!--                        android:orientation="vertical">-->
+
+
+<!--                        <ImageButton-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:background="@color/transparent"-->
+<!--                            android:src="@drawable/ic_video_wihte_light_24dp" />-->
+
+<!--                        <ImageButton-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:background="@color/transparent"-->
+<!--                            android:src="@drawable/ic_video_wihte_light_24dp" />-->
+
+<!--                        <ImageButton-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:background="@color/transparent"-->
+<!--                            android:src="@drawable/ic_video_wihte_light_24dp" />-->
+
+<!--                        <ImageButton-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:background="@color/transparent"-->
+<!--                            android:src="@drawable/ic_video_wihte_light_24dp" />-->
+
+<!--                        <ImageButton-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:background="@color/transparent"-->
+<!--                            android:src="@drawable/ic_video_wihte_light_24dp" />-->
+
+<!--                        <ImageButton-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:background="@color/transparent"-->
+<!--                            android:src="@drawable/ic_video_wihte_light_24dp" />-->
+
+<!--                        <ImageButton-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:background="@color/transparent"-->
+<!--                            android:src="@drawable/ic_video_wihte_light_24dp" />-->
+
+<!--                    </LinearLayout>-->
+
+
+<!--                    <TextView-->
+<!--                        android:id="@+id/video_total_duration"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_gravity="bottom"-->
+<!--                        android:layout_marginBottom="2dp"-->
+<!--                        android:layout_marginLeft="26dp"-->
+<!--                        android:gravity="bottom|left"-->
+<!--                        android:text="09:00"-->
+<!--                        android:textColor="@color/colorWhite"-->
+<!--                        android:textSize="12sp"-->
+<!--                        android:visibility="visible" />-->
+
+<!--                    <ImageButton-->
+<!--                        android:id="@+id/play_btn_video"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_gravity="center"-->
+<!--                        android:background="@color/transparent"-->
+<!--                        android:gravity="center"-->
+<!--                        android:padding="16dp"-->
+<!--                        android:visibility="gone"-->
+<!--                        android:src="@drawable/ic_play_circle_white_72dp" />-->
+
+
+<!--                    <ProgressBar-->
+<!--                        android:id="@+id/progress_bar_upload_video_init"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_gravity="center"-->
+<!--                        android:background="@drawable/bg_circle_progress_bar"-->
+<!--                        android:visibility="gone" />-->
+
+<!--                    <ProgressBar-->
+<!--                        android:id="@+id/progress_bar_upload_video"-->
+<!--                        style="?android:attr/progressBarStyleHorizontal"-->
+<!--                        android:layout_width="50dp"-->
+<!--                        android:layout_height="50dp"-->
+<!--                        android:layout_gravity="center"-->
+<!--                        android:background="@drawable/bg_circle_progress_bar"-->
+<!--                        android:max="100"-->
+<!--                        android:padding="5dp"-->
+<!--                        android:progress="0"-->
+<!--                        android:progressDrawable="@drawable/bg_circle_progress"-->
+<!--                        android:visibility="gone" />-->
+
+
+<!--                    <ImageButton-->
+<!--                        android:id="@+id/cancel_upload_video"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_gravity="center"-->
+<!--                        android:background="@color/transparent"-->
+<!--                        android:visibility="gone"-->
+<!--                        android:src="@drawable/ic_file_cancel_gray_24dp" />-->
+
+<!--                    <ProgressBar-->
+<!--                        android:id="@+id/progress_bar_download_video_init"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_gravity="center"-->
+<!--                        android:background="@drawable/bg_circle_progress_bar"-->
+<!--                        android:visibility="gone" />-->
+
+<!--                    <ProgressBar-->
+<!--                        android:id="@+id/progress_bar_download_video"-->
+<!--                        style="?android:attr/progressBarStyleHorizontal"-->
+<!--                        android:layout_width="50dp"-->
+<!--                        android:layout_height="50dp"-->
+<!--                        android:layout_gravity="center"-->
+<!--                        android:background="@drawable/bg_circle_progress_bar"-->
+<!--                        android:indeterminate="true"-->
+<!--                        android:max="100"-->
+<!--                        android:padding="5dp"-->
+<!--                        android:progress="0"-->
+<!--                        android:progressDrawable="@drawable/bg_circle_progress"-->
+<!--                        android:visibility="gone" />-->
+
+<!--                    <ImageButton-->
+<!--                        android:id="@+id/cancel_download_video"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_gravity="center"-->
+<!--                        android:background="@color/transparent"-->
+<!--                        android:visibility="gone"-->
+<!--                        android:src="@drawable/ic_file_cancel_gray_24dp" />-->
+
+<!--                    <LinearLayout-->
+<!--                        android:id="@+id/download_video"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_gravity="center"-->
+<!--                        android:background="@drawable/bg_circle_retry"-->
+<!--                        android:orientation="horizontal"-->
+<!--                        android:visibility="gone">-->
+
+<!--                        <ImageButton-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_gravity="center"-->
+<!--                            android:layout_margin="5dp"-->
+<!--                            android:background="@color/transparent"-->
+<!--                            android:visibility="visible"-->
+<!--                            android:src="@drawable/ic_file_download_white_24dp" />-->
+
+<!--                        <TextView-->
+<!--                            android:id="@+id/file_size_video"-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_gravity="center"-->
+<!--                            android:paddingBottom="10dp"-->
+<!--                            android:paddingRight="10dp"-->
+<!--                            android:paddingTop="10dp"-->
+<!--                            android:textColor="@color/colorWhite"-->
+<!--                            android:textStyle="bold"-->
+<!--                            android:visibility="visible" />-->
+<!--                    </LinearLayout>-->
+
+<!--                    <LinearLayout-->
+<!--                        android:id="@+id/retry_upload_video"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_gravity="center"-->
+<!--                        android:background="@drawable/bg_circle_retry"-->
+<!--                        android:orientation="horizontal"-->
+<!--                        android:visibility="gone">-->
+
+<!--                        <ImageButton-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_gravity="center"-->
+<!--                            android:layout_margin="5dp"-->
+<!--                            android:background="@color/transparent"-->
+<!--                            android:visibility="visible"-->
+<!--                            android:src="@drawable/ic_file_upload_white_24dp" />-->
+
+<!--                        <TextView-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_gravity="center"-->
+<!--                            android:paddingBottom="10dp"-->
+<!--                            android:paddingRight="10dp"-->
+<!--                            android:paddingTop="10dp"-->
+<!--                            android:text="RETRY"-->
+<!--                            android:textColor="@color/colorWhite"-->
+<!--                            android:textStyle="bold"-->
+<!--                            android:visibility="visible" />-->
+<!--                    </LinearLayout>-->
+
+<!--                </FrameLayout>-->
+<!--                &lt;!&ndash;video layout end&ndash;&gt;-->
+
+<!--                &lt;!&ndash; image layout start &ndash;&gt;-->
+
+<!--                <FrameLayout-->
+<!--                    android:id="@+id/image_layout"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:clickable="true"-->
+<!--                    android:visibility="gone">-->
+
+<!--                    <ImageView-->
+<!--                        android:id="@+id/image_file"-->
+<!--                        android:layout_width="200dp"-->
+<!--                        android:layout_height="200dp"-->
+<!--                        android:layout_gravity="center"-->
+<!--                        android:adjustViewBounds="true"-->
+<!--                        android:scaleType="centerCrop"-->
+<!--                        android:visibility="gone" />-->
+
+
+<!--                    <ProgressBar-->
+<!--                        android:id="@+id/progress_bar_upload_image_init"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_gravity="center"-->
+<!--                        android:background="@drawable/bg_circle_progress_bar"-->
+<!--                        android:visibility="gone" />-->
+
+<!--                    <ProgressBar-->
+<!--                        android:id="@+id/progress_bar_upload_image"-->
+<!--                        style="?android:attr/progressBarStyleHorizontal"-->
+<!--                        android:layout_width="50dp"-->
+<!--                        android:layout_height="50dp"-->
+<!--                        android:layout_gravity="center"-->
+<!--                        android:background="@drawable/bg_circle_progress_bar"-->
+<!--                        android:indeterminate="true"-->
+<!--                        android:max="100"-->
+<!--                        android:padding="5dp"-->
+<!--                        android:progress="0"-->
+<!--                        android:progressDrawable="@drawable/bg_circle_progress"-->
+<!--                        android:visibility="gone" />-->
+
+<!--                    <ImageButton-->
+<!--                        android:id="@+id/cancel_upload_image"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_gravity="center"-->
+<!--                        android:background="@color/transparent"-->
+<!--                        android:visibility="gone"-->
+<!--                        android:src="@drawable/ic_file_cancel_gray_24dp" />-->
+
+<!--                    <ProgressBar-->
+<!--                        android:id="@+id/progress_bar_download_image_init"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_gravity="center"-->
+<!--                        android:background="@drawable/bg_circle_progress_bar"-->
+<!--                        android:visibility="gone" />-->
+
+<!--                    <ProgressBar-->
+<!--                        android:id="@+id/progress_bar_download_image"-->
+<!--                        style="?android:attr/progressBarStyleHorizontal"-->
+<!--                        android:layout_width="50dp"-->
+<!--                        android:layout_height="50dp"-->
+<!--                        android:layout_gravity="center"-->
+<!--                        android:background="@drawable/bg_circle_progress_bar"-->
+<!--                        android:indeterminate="true"-->
+<!--                        android:max="100"-->
+<!--                        android:padding="5dp"-->
+<!--                        android:progress="0"-->
+<!--                        android:progressDrawable="@drawable/bg_circle_progress"-->
+<!--                        android:visibility="gone" />-->
+
+<!--                    <ImageButton-->
+<!--                        android:id="@+id/cancel_download_image"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_gravity="center"-->
+<!--                        android:background="@color/transparent"-->
+<!--                        android:visibility="gone"-->
+<!--                        android:src="@drawable/ic_file_cancel_gray_24dp" />-->
+
+
+<!--                    <LinearLayout-->
+<!--                        android:id="@+id/download_image"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_gravity="center"-->
+<!--                        android:background="@drawable/bg_circle_retry"-->
+<!--                        android:orientation="horizontal"-->
+<!--                        android:visibility="gone">-->
+
+<!--                        <ImageButton-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_gravity="center"-->
+<!--                            android:layout_margin="5dp"-->
+<!--                            android:background="@color/transparent"-->
+<!--                            android:visibility="visible"-->
+<!--                            android:src="@drawable/ic_file_download_white_24dp" />-->
+
+<!--                        <TextView-->
+<!--                            android:id="@+id/file_size_image"-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_gravity="center"-->
+<!--                            android:paddingBottom="10dp"-->
+<!--                            android:paddingRight="10dp"-->
+<!--                            android:paddingTop="10dp"-->
+<!--                            android:textColor="@color/colorWhite"-->
+<!--                            android:textStyle="bold"-->
+<!--                            android:visibility="visible" />-->
+
+<!--                    </LinearLayout>-->
+
+
+<!--                    <LinearLayout-->
+<!--                        android:id="@+id/retry_upload_image"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_gravity="center"-->
+<!--                        android:background="@drawable/bg_circle_retry"-->
+<!--                        android:orientation="horizontal"-->
+<!--                        android:visibility="gone">-->
+
+<!--                        <ImageButton-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_gravity="center"-->
+<!--                            android:layout_margin="5dp"-->
+<!--                            android:background="@color/transparent"-->
+<!--                            android:visibility="visible"-->
+<!--                            android:src="@drawable/ic_file_upload_white_24dp" />-->
+
+<!--                        <TextView-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_gravity="center"-->
+<!--                            android:paddingBottom="10dp"-->
+<!--                            android:paddingRight="10dp"-->
+<!--                            android:paddingTop="10dp"-->
+<!--                            android:text="RETRY"-->
+<!--                            android:textColor="@color/colorWhite"-->
+<!--                            android:textStyle="bold"-->
+<!--                            android:visibility="visible" />-->
+<!--                    </LinearLayout>-->
+<!--                </FrameLayout>-->
+
+<!--                &lt;!&ndash;image layout end&ndash;&gt;-->
+
+<!--                <LinearLayout-->
+<!--                    android:id="@+id/date_shadow"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="20dp"-->
+<!--                    android:layout_gravity="bottom"-->
+<!--                    android:background="#20000000"-->
+<!--                    android:gravity="bottom"-->
+<!--                    android:orientation="vertical"-->
+<!--                    android:visibility="gone" />-->
+
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_gravity="end|bottom"-->
+<!--                    android:gravity="end"-->
+<!--                    android:orientation="horizontal"-->
+<!--                    android:paddingBottom="2dp">-->
+
+
+<!--                    <TextView-->
+<!--                        android:id="@+id/date_message"-->
+<!--                        android:layout_width="0dp"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_gravity="center"-->
+<!--                        android:layout_marginBottom="0.5dp"-->
+<!--                        android:layout_marginLeft="2dp"-->
+<!--                        android:layout_marginRight="2dp"-->
+<!--                        android:layout_weight="1"-->
+<!--                        android:gravity="end"-->
+<!--                        android:text="08:00"-->
+<!--                        android:textAppearance="@android:style/TextAppearance.Medium"-->
+<!--                        android:textColor="@color/colorGrayStatus"-->
+<!--                        android:textSize="12sp" />-->
+
+
+<!--                    <ImageView-->
+<!--                        android:id="@+id/status_messages"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_gravity="center"-->
+<!--                        android:layout_marginBottom="0.5dp"-->
+<!--                        android:layout_marginLeft="2dp"-->
+<!--                        android:layout_marginRight="2dp"-->
+<!--                        android:visibility="visible" />-->
+<!--                </LinearLayout>-->
+<!--            </androidx.cardview.widget.CardView>-->
+<!--        </FrameLayout>-->
+<!--        &lt;!&ndash;        <TextView&ndash;&gt;-->
+<!--        &lt;!&ndash;            android:layout_width="wrap_content"&ndash;&gt;-->
+<!--        &lt;!&ndash;            android:layout_height="wrap_content"&ndash;&gt;-->
+<!--        &lt;!&ndash;            android:text="9:15 AM"&ndash;&gt;-->
+<!--        &lt;!&ndash;            android:textSize="10sp"&ndash;&gt;-->
+<!--        &lt;!&ndash;            android:visibility="visible"&ndash;&gt;-->
+<!--        &lt;!&ndash;            android:layout_gravity="bottom"/>&ndash;&gt;-->
+<!--        &lt;!&ndash;        <ImageView&ndash;&gt;-->
+<!--        &lt;!&ndash;            android:layout_width="16dp"&ndash;&gt;-->
+<!--        &lt;!&ndash;            android:layout_height="16dp"&ndash;&gt;-->
+<!--        &lt;!&ndash;            android:src="@drawable/ic_tick"&ndash;&gt;-->
+<!--        &lt;!&ndash;            android:layout_marginLeft="3dp"&ndash;&gt;-->
+<!--        &lt;!&ndash;            android:layout_gravity="bottom"&ndash;&gt;-->
+<!--        &lt;!&ndash;            android:visibility="visible"&ndash;&gt;-->
+<!--        &lt;!&ndash;            app:tint="@color/black" />&ndash;&gt;-->
+<!--    </LinearLayout>-->
+
+<!--    &lt;!&ndash;    <LinearLayout&ndash;&gt;-->
+<!--    &lt;!&ndash;        android:id="@+id/layout_image"&ndash;&gt;-->
+<!--    &lt;!&ndash;        android:layout_width="wrap_content"&ndash;&gt;-->
+<!--    &lt;!&ndash;        android:layout_height="250dp"&ndash;&gt;-->
+<!--    &lt;!&ndash;        android:visibility="gone"&ndash;&gt;-->
+<!--    &lt;!&ndash;        android:layout_marginStart="100dp"&ndash;&gt;-->
+<!--    &lt;!&ndash;        android:orientation="vertical"&ndash;&gt;-->
+<!--    &lt;!&ndash;        android:layout_marginLeft="100dp">&ndash;&gt;-->
+<!--    &lt;!&ndash;        <androidx.cardview.widget.CardView&ndash;&gt;-->
+<!--    &lt;!&ndash;            android:layout_width="wrap_content"&ndash;&gt;-->
+<!--    &lt;!&ndash;            app:cardCornerRadius="15dp"&ndash;&gt;-->
+<!--    &lt;!&ndash;            app:cardElevation="5dp"&ndash;&gt;-->
+<!--    &lt;!&ndash;            android:layout_height="wrap_content">&ndash;&gt;-->
+<!--    &lt;!&ndash;            <ImageView&ndash;&gt;-->
+<!--    &lt;!&ndash;                android:id="@+id/image_chat"&ndash;&gt;-->
+<!--    &lt;!&ndash;                android:layout_width="wrap_content"&ndash;&gt;-->
+<!--    &lt;!&ndash;                android:layout_height="wrap_content"&ndash;&gt;-->
+<!--    &lt;!&ndash;                android:scaleType="fitCenter"&ndash;&gt;-->
+<!--    &lt;!&ndash;                android:src="@drawable/icon_male_ph"/>&ndash;&gt;-->
+<!--    &lt;!&ndash;        </androidx.cardview.widget.CardView>&ndash;&gt;-->
+<!--    &lt;!&ndash;    </LinearLayout>&ndash;&gt;-->
+
+<!--    &lt;!&ndash;    <LinearLayout&ndash;&gt;-->
+<!--    &lt;!&ndash;        android:id="@+id/layout_voice"&ndash;&gt;-->
+<!--    &lt;!&ndash;        android:layout_width="200dp"&ndash;&gt;-->
+<!--    &lt;!&ndash;        android:layout_height="wrap_content"&ndash;&gt;-->
+<!--    &lt;!&ndash;        android:visibility="gone"&ndash;&gt;-->
+<!--    &lt;!&ndash;        android:background="@drawable/bg_layout_round"&ndash;&gt;-->
+<!--    &lt;!&ndash;        android:backgroundTint="@android:color/white"&ndash;&gt;-->
+<!--    &lt;!&ndash;        android:orientation="horizontal">&ndash;&gt;-->
+
+<!--    &lt;!&ndash;        <RelativeLayout&ndash;&gt;-->
+<!--    &lt;!&ndash;            android:layout_width="wrap_content"&ndash;&gt;-->
+<!--    &lt;!&ndash;            android:layout_gravity="center_vertical"&ndash;&gt;-->
+<!--    &lt;!&ndash;            android:layout_marginStart="5dp"&ndash;&gt;-->
+<!--    &lt;!&ndash;            android:layout_marginEnd="-3dp"&ndash;&gt;-->
+<!--    &lt;!&ndash;            android:layout_height="wrap_content"&ndash;&gt;-->
+<!--    &lt;!&ndash;            android:layout_marginLeft="5dp"&ndash;&gt;-->
+<!--    &lt;!&ndash;            android:layout_marginRight="-3dp">&ndash;&gt;-->
+
+<!--    &lt;!&ndash;            <ImageButton&ndash;&gt;-->
+<!--    &lt;!&ndash;                android:id="@+id/btn_play_chat"&ndash;&gt;-->
+<!--    &lt;!&ndash;                android:layout_width="25dp"&ndash;&gt;-->
+<!--    &lt;!&ndash;                android:layout_height="25dp"&ndash;&gt;-->
+<!--    &lt;!&ndash;                android:src="@drawable/ic_baseline_play_circle_filled_24"&ndash;&gt;-->
+<!--    &lt;!&ndash;                android:clickable="false"&ndash;&gt;-->
+<!--    &lt;!&ndash;                android:tint="@color/colorPrimary"&ndash;&gt;-->
+<!--    &lt;!&ndash;                android:layout_centerVertical="true"&ndash;&gt;-->
+<!--    &lt;!&ndash;                android:layout_marginStart="10dp"&ndash;&gt;-->
+<!--    &lt;!&ndash;                android:visibility="visible"&ndash;&gt;-->
+<!--    &lt;!&ndash;                android:layout_marginLeft="10dp" />&ndash;&gt;-->
+<!--    &lt;!&ndash;        </RelativeLayout>&ndash;&gt;-->
+<!--    &lt;!&ndash;        <View&ndash;&gt;-->
+<!--    &lt;!&ndash;            android:id="@+id/v_length"&ndash;&gt;-->
+<!--    &lt;!&ndash;            android:layout_width="match_parent"&ndash;&gt;-->
+<!--    &lt;!&ndash;            android:layout_marginEnd="15dp"&ndash;&gt;-->
+<!--    &lt;!&ndash;            android:layout_height="1dp"&ndash;&gt;-->
+<!--    &lt;!&ndash;            android:layout_gravity="center_vertical"&ndash;&gt;-->
+<!--    &lt;!&ndash;            android:background="@android:color/black"&ndash;&gt;-->
+<!--    &lt;!&ndash;            android:layout_marginRight="15dp" />&ndash;&gt;-->
+<!--    &lt;!&ndash;        <Chronometer&ndash;&gt;-->
+<!--    &lt;!&ndash;            android:id="@+id/tv_duration"&ndash;&gt;-->
+<!--    &lt;!&ndash;            android:visibility="gone"&ndash;&gt;-->
+<!--    &lt;!&ndash;            android:layout_width="60dp"&ndash;&gt;-->
+<!--    &lt;!&ndash;            android:layout_height="30dp"&ndash;&gt;-->
+<!--    &lt;!&ndash;            android:layout_gravity="center_vertical"&ndash;&gt;-->
+<!--    &lt;!&ndash;            android:layout_marginEnd="10dp"&ndash;&gt;-->
+<!--    &lt;!&ndash;            android:gravity="center"&ndash;&gt;-->
+<!--    &lt;!&ndash;            android:text="01:00"&ndash;&gt;-->
+<!--    &lt;!&ndash;            android:textColor="@android:color/black"&ndash;&gt;-->
+<!--    &lt;!&ndash;            android:layout_marginRight="10dp" />&ndash;&gt;-->
+<!--    &lt;!&ndash;    </LinearLayout>&ndash;&gt;-->
+<!--</LinearLayout>-->

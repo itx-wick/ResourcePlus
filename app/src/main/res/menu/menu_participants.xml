@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/message"
+        android:enabled="true"
+        android:title="Message" />
+
+    <item
+        android:id="@+id/view_detail"
+        android:enabled="true"
+        android:title="View" />
+
+    <item
+        android:id="@+id/admin"
+        android:enabled="true"
+        android:title="Make group admin"
+        android:visible="false" />
+
+    <item
+        android:id="@+id/dismiss"
+        android:enabled="true"
+        android:title="Dismiss as admin"
+        android:visible="false" />
+
+    <item
+        android:id="@+id/remove"
+        android:enabled="true"
+        android:title="Remove"
+        android:visible="false" />
+
+    <item
+        android:id="@+id/view"
+        android:enabled="true"
+        android:title="View in Contacts" />
+
+    <item
+        android:id="@+id/add_to_contacts"
+        android:enabled="true"
+        android:title="Add to Contacts"
+        android:visible="false" />
+</menu>

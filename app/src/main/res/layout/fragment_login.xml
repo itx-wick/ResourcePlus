@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="login"
+            type="com.mr_w.resourceplus.fragments.phone_login.LoginViewModel" />
+    </data>
+
+    <ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".fragments.phone_login.LoginFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/_35sdp">
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:id="@+id/top_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:liftOnScroll="true">
+
+                <com.google.android.material.appbar.MaterialToolbar
+                    android:id="@+id/topAppBar"
+                    style="@style/Widget.MaterialComponents.Toolbar.Primary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="?attr/actionBarSize"
+                    app:title="Authentication"
+                    app:titleTextAppearance="@style/CustomToolbar" />
+
+            </com.google.android.material.appbar.AppBarLayout>
+
+            <ImageView
+                android:id="@+id/app_logo"
+                android:layout_width="@dimen/_85sdp"
+                android:layout_height="@dimen/_85sdp"
+                android:layout_marginTop="@dimen/_22sdp"
+                android:src="@drawable/app_logo"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/top_bar" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_22sdp"
+                android:layout_marginTop="@dimen/_35sdp"
+                android:layout_marginEnd="@dimen/_22sdp"
+                app:layout_constraintTop_toBottomOf="@id/app_logo">
+
+                <TextView
+                    android:id="@+id/checkView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/_3sdp"
+                    android:text="@string/enter_your_mobile_number"
+                    android:textColor="@color/red"
+                    android:visibility="gone"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <LinearLayout
+                    android:id="@+id/mobileNumberLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/custom_input"
+                    android:gravity="center_vertical"
+                    app:layout_constraintTop_toBottomOf="@id/checkView">
+
+                    <com.hbb20.CountryCodePicker
+                        android:id="@+id/ccp1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/_40sdp"
+                        android:gravity="center_vertical"
+                        app:ccpDialog_background="@drawable/ccp_bg"
+                        app:ccp_defaultPhoneCode="92"
+                        app:ccp_showArrow="false"
+                        app:ccp_showNameCode="false" />
+
+                    <EditText
+                        android:id="@+id/mobileNumber1"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_weight="1"
+                        android:background="@drawable/custom_input"
+                        android:hint="@string/mobile_number"
+                        android:inputType="number"
+                        android:paddingStart="@dimen/_10sdp"
+                        android:paddingEnd="@dimen/_5sdp"
+                        android:textColor="@color/black"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/mobileNumber" />
+
+                    <ImageView
+                        android:id="@+id/add1"
+                        android:layout_width="@dimen/_20sdp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_margin="@dimen/_5sdp"
+                        android:clickable="true"
+                        android:contentDescription="add"
+                        android:focusable="true"
+                        android:src="@drawable/add_btn_layout" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/mobileNumberLayout2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/custom_input"
+                    android:gravity="center_vertical"
+                    android:visibility="gone"
+                    android:weightSum="3"
+                    app:layout_constraintTop_toBottomOf="@id/mobileNumberLayout">
+
+                    <com.hbb20.CountryCodePicker
+                        android:id="@+id/ccp2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:gravity="center_vertical"
+                        app:ccpDialog_background="@drawable/ccp_bg"
+                        app:ccp_defaultPhoneCode="92"
+                        app:ccp_showArrow="false"
+                        app:ccp_showNameCode="false" />
+
+                    <EditText
+                        android:id="@+id/mobileNumber2"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:layout_weight="2.5"
+                        android:background="@drawable/custom_input"
+                        android:drawablePadding="12dp"
+                        android:hint="Mobile Number"
+                        android:inputType="number"
+                        android:paddingStart="15dp"
+                        android:paddingLeft="15dp"
+                        android:paddingEnd="12dp"
+                        android:paddingRight="12dp"
+                        android:textColor="@color/black"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/mobileNumber" />
+
+                    <ImageView
+                        android:id="@+id/del1"
+                        android:layout_width="0dp"
+                        android:layout_height="24dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="0.5"
+                        android:contentDescription="add"
+                        android:src="@drawable/minus_btn_layout" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/checkViewFullName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:text="Enter Your Full Name"
+                    android:textColor="@color/red"
+                    android:visibility="gone"
+                    app:layout_constraintTop_toBottomOf="@id/mobileNumberLayout2" />
+
+                <EditText
+                    android:id="@+id/fullName"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:background="@drawable/custom_input"
+                    android:hint="@string/enter_your_full_name"
+                    android:inputType="text"
+                    android:paddingStart="@dimen/_10sdp"
+                    android:paddingEnd="@dimen/_5sdp"
+                    android:textColor="@color/black"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/checkViewFullName" />
+
+                <LinearLayout
+                    android:id="@+id/referalNumberLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:layout_marginBottom="@dimen/_40sdp"
+                    android:background="@drawable/custom_input"
+                    android:gravity="center_vertical"
+                    app:layout_constraintTop_toBottomOf="@id/fullName">
+
+                    <com.hbb20.CountryCodePicker
+                        android:id="@+id/ccp3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/_40sdp"
+                        android:gravity="center_vertical"
+                        app:ccpDialog_background="@color/white"
+                        app:ccp_defaultPhoneCode="92"
+                        app:ccp_showArrow="false"
+                        app:ccp_showNameCode="false" />
+
+                    <EditText
+                        android:id="@+id/referralNumber1"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_weight="1"
+                        android:background="@drawable/custom_input"
+                        android:hint="@string/referral_number"
+                        android:inputType="number"
+                        android:paddingStart="@dimen/_10sdp"
+                        android:paddingEnd="@dimen/_5sdp"
+                        android:textColor="@color/black"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/mobileNumber" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/btnSubmit1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:backgroundTint="@color/primary"
+                    android:letterSpacing="0.2"
+                    android:text="Authenticate"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/referalNumberLayout" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</layout>

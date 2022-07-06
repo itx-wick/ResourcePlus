@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/chat_btn_call"
+        android:icon="@drawable/ic_add_call"
+        android:title="Add Call"
+        app:showAsAction="always" />
+
+    <group android:id="@+id/action_more">
+        <item
+            android:id="@+id/group_info"
+            android:title="Group info" />
+
+        <item
+            android:id="@+id/group_media"
+            android:title="Group media" />
+
+        <item
+            android:id="@+id/search_group"
+            android:title="Search" />
+
+        <item
+            android:id="@+id/exit_group"
+            android:title="Exit group" />
+
+        <item
+            android:id="@+id/clear_chat_group"
+            android:title="Clear chat" />
+
+        <item
+            android:id="@+id/export_chat_group"
+            android:title="Export chat" />
+
+        <item
+            android:id="@+id/report_group"
+            android:title="Report" />
+
+        <item
+            android:id="@+id/refresh_group"
+            android:title="Refresh" />
+    </group>
+</menu>

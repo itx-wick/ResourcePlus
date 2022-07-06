@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_message"
+        android:icon="@drawable/ic_chat"
+        android:iconTint="@color/white"
+        android:title="Message"
+        app:showAsAction="always" />
+
+    <group android:id="@+id/gr">
+        <item
+            android:id="@+id/action_remove"
+            android:title="Remove from call log" />
+        <item
+            android:id="@+id/action_block"
+            android:title="Block" />
+    </group>
+
+</menu>

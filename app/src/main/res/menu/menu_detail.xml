@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/share"
+        android:title="Share" />
+
+    <item
+        android:id="@+id/edit"
+        android:title="Edit" />
+
+    <item
+        android:id="@+id/view"
+        android:title="View in address book" />
+
+    <item
+        android:id="@+id/add_to_contacts"
+        android:title="Add to contacts"
+        android:visible="false" />
+</menu>

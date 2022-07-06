@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="document_tab"
+            type="com.mr_w.resourceplus.fragments.document_tab.DocumentTabViewModel" />
+    </data>
+
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:context=".fragments.document_tab.DocumentTab">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/documents"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none" />
+
+        <TextView
+            android:id="@+id/noDocument"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="No Document"
+            android:textSize="@dimen/_16ssp"
+            android:visibility="gone" />
+
+    </FrameLayout>
+
+</layout>

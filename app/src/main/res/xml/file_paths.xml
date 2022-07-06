@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+
+    <external-path
+        name="CameraPicture"
+        path="Android/data/com.network.atonline786.usafe/cache/" />
+
+    <external-path
+        name="CameraPicture"
+        path="Android/data/com.network..usafe/cache/" />
+
+    <cache-path
+        name="shared_images"
+        path="images/" />
+
+    <cache-path
+        name="cache"
+        path="Android/data/com.mr_w.resourceplus/cache/ImageCompressor" />
+
+    <root
+        name="rootpath"
+        path="." />
+    <external-path
+        name="path"
+        path="/" />
+
+    <root-path
+        name="root"
+        path="." />
+
+    <files-path
+        name="filespath"
+        path="ResourcePlus" />
+</paths>
